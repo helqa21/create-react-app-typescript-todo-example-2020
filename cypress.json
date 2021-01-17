@@ -2,5 +2,7 @@
   "video": false,
   "experimentalComponentTesting": true,
   "experimentalFetchPolyfill": true,
-  "componentFolder": "cypress/unit"
+  "componentFolder": "cypress/unit",
+  "testFiles": "**/*.feature",
+  "baseUrl": "http://localhost:3000/"
 }

@@ -15,12 +15,17 @@
 const percyHealthCheck = require('@percy/cypress/task')
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-module.exports = (on, config) => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('@cypress/code-coverage/task')(on, config)
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-  on('task', percyHealthCheck)
+// module.exports = (on, config) => {
+//   // eslint-disable-next-line @typescript-eslint/no-var-requires
+//   require('@cypress/code-coverage/task')(on, config)
+//   // `on` is used to hook into various events Cypress emits
+//   // `config` is the resolved Cypress config
+//   on('task', percyHealthCheck)
 
-  return config
+//   return config
+// }
+const cucumber = require('cypress-cucumber-preprocessor').default
+ 
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
 }
